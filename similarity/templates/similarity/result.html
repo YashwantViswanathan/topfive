@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Top Five Similar Sentences</title>
+</head>
+<body>
+    <h1>Top Five Similar Sentences</h1>
+    <ul>
+        {% for item in top_five_similar.itertuples %}
+            <li>{{ item.sentence }} - Similarity Score: {{ item.similarity_score }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'similarity' %}">Try another sentence</a>
+</body>
+</html>
